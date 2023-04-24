@@ -1,5 +1,5 @@
 # IntroPP2183076
-Esta es la valuación para evaluar su capacidad para transformar códigos implementados en C / C ++ en su ejecución paralela utilizando OpenMP.
+En esta valuación se busca evaluar nuestra capacidad para transformar códigos implementados en C / C ++ en su ejecución paralela utilizando OpenMP.
 En este repositorio se encuentran los 6 archivos
 Código original en C
 Nuevo código en OpenMP llamado "omp_trapezAreaSimple.c"
