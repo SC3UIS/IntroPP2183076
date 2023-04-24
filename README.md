@@ -1,5 +1,5 @@
 # IntroPP2183076
-Desarrollo de Evaluación 1 C/C++ Procesamiento Memoria Compartida - Introducción a la programación paralela<br />
+## Desarrollo de Evaluación 1 C/C++ Procesamiento Memoria Compartida - Introducción a la programación paralela<br />
 En esta valuación se busca evaluar nuestra capacidad para transformar códigos implementados en C / C ++ en su ejecución paralela utilizando OpenMP.
 En este repositorio se encuentran los 6 archivos
 * Código original en C ```trapezAreaSimple.C```
