@@ -14,6 +14,7 @@ Con `time` obtenes el tiempo de los tres códigos.
 ![Captura de pantalla 2023-05-16 232318](https://github.com/SC3UIS/IntroPP2183076/assets/82180254/8fbeda96-d495-47b1-b6bb-28aeed9de43f)
 
 </br>
+
 - Código normal:
   - Real: 0m5.082s
   - User: 0m0.002s
