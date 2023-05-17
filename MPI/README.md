@@ -4,7 +4,7 @@ Una vez que hemos solicitado los recursos y nos encontramos en la carpeta asigna
 Una vez que tenemos el nuevo código `mpi_trapezAreaSimple.c`, para compilarlo utilizamos el siguiente código: `mpicc mpi_trapezAreaSimple.c -o mpi_trapezAreaSimple`.
 Para ejecutarlo, utilizamos el siguiente código: `mpirun -np 12 ./mpi_trapezAreaSimple`.
 # Tiempo de ejecución de los tres códigos
-##
+## `trapezAreaSimple.c`
 ![Captura de pantalla 2023-05-16 224746](https://github.com/SC3UIS/IntroPP2183076/assets/82180254/2c6642fb-5509-4202-a984-e63fe364f9d2)</br>
 ## 
 ![Captura de pantalla 2023-05-16 224918](https://github.com/SC3UIS/IntroPP2183076/assets/82180254/c0078b0b-1c69-46ed-93a4-00c96165717c)</br>
