@@ -14,6 +14,29 @@ Con `time` obtenes el tiempo de los tres códigos.
 ![Captura de pantalla 2023-05-16 232318](https://github.com/SC3UIS/IntroPP2183076/assets/82180254/8fbeda96-d495-47b1-b6bb-28aeed9de43f)
 
 </br>
-Según estos resultados, podemos observar que la versión MPI tiene el tiempo de ejecución más bajo con 3.805 segundos, seguida de cerca por la versión OMP con 5.415 segundos. La versión normal, sin paralelización, tiene el tiempo de ejecución más alto con 6.444 segundos.
-</br>
-Esto indica que tanto la versión MPI como la versión OMP logran mejorar el rendimiento en comparación con la versión normal. Sin embargo, la versión MPI parece ser la más eficiente en términos de tiempo de ejecución en este caso particular.
+- Código normal: 
+  - Real: 0m5.082s
+  - User: 0m0.002s
+  - Sys: 0m0.000s
+
+- Código con MPI:
+  - Real: 0m5.097s
+  - User: 0m0.015s
+  - Sys: 0m0.017s
+
+- Código con OpenMP:
+  - Real: 0m5.105s
+  - User: 0m0.124s
+  - Sys: 0m0.004s
+
+En términos de los tiempos "real" (real), que reflejan la duración total de la ejecución del programa, podemos observar que los tres códigos tienen tiempos de ejecución similares, con diferencias mínimas entre ellos.
+
+Sin embargo, en los tiempos "user" (usuario) y "sys" (sistema), que indican el tiempo de CPU utilizado por el usuario y el sistema operativo, podemos observar algunas diferencias:
+
+- El código normal tiene tiempos "user" y "sys" muy bajos, lo que indica que el tiempo de CPU utilizado es mínimo. Esto puede ser debido a la falta de paralelización y el uso de un solo hilo de ejecución.
+
+- El código con MPI muestra tiempos "user" y "sys" ligeramente más altos que el código normal. Esto se debe al overhead adicional de la comunicación y sincronización entre los procesos MPI.
+
+- El código con OpenMP muestra un tiempo "user" más alto en comparación con los otros dos códigos. Esto es esperado ya que OpenMP utiliza múltiples hilos para paralelizar el cálculo, lo que implica una mayor carga en la CPU para administrar los hilos.
+
+En resumen, en términos de tiempo de ejecución total (real), los tres códigos tienen un rendimiento similar. Sin embargo, en términos de tiempo de CPU utilizado (user y sys), el código normal tiene el menor tiempo, seguido por el código con MPI y luego el código con OpenMP.
