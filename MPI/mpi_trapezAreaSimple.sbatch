@@ -1,9 +1,8 @@
 #!/bin/bash
-
-#SBATCH --job-name=mpi_integration
-#SBATCH --nodes=2
-#SBATCH --ntasks-per-node=1
-#SBATCH --cpus-per-task=8
+#SBATCH --job-name=trapezAreaSimple
+#SBATCH --ntasks=1
+#SBATCH --nodes=1
+#SBATCH --cpus-per-task=4
 
 ## Cargar módulo
 module load devtools/mpi/mpich/3.3.1
