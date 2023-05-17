@@ -14,7 +14,7 @@ Con `time` obtenes el tiempo de los tres códigos.
 ![Captura de pantalla 2023-05-16 232318](https://github.com/SC3UIS/IntroPP2183076/assets/82180254/8fbeda96-d495-47b1-b6bb-28aeed9de43f)
 
 </br>
-- Código normal: 
+- Código normal:
   - Real: 0m5.082s
   - User: 0m0.002s
   - Sys: 0m0.000s
@@ -29,14 +29,17 @@ Con `time` obtenes el tiempo de los tres códigos.
   - User: 0m0.124s
   - Sys: 0m0.004s
 
-En términos de los tiempos "real" (real), que reflejan la duración total de la ejecución del programa, podemos observar que los tres códigos tienen tiempos de ejecución similares, con diferencias mínimas entre ellos.
 
-Sin embargo, en los tiempos "user" (usuario) y "sys" (sistema), que indican el tiempo de CPU utilizado por el usuario y el sistema operativo, podemos observar algunas diferencias:
+- En términos de tiempo "real", que indica la duración total de la ejecución del programa, los tres códigos tienen tiempos muy similares, alrededor de 5.1 segundos.
 
-- El código normal tiene tiempos "user" y "sys" muy bajos, lo que indica que el tiempo de CPU utilizado es mínimo. Esto puede ser debido a la falta de paralelización y el uso de un solo hilo de ejecución.
+- El tiempo "user" representa el tiempo de CPU utilizado por el usuario, mientras que el tiempo "sys" representa el tiempo de CPU utilizado por el sistema operativo. En estos tiempos, es importante observar la diferencia entre los códigos.
 
-- El código con MPI muestra tiempos "user" y "sys" ligeramente más altos que el código normal. Esto se debe al overhead adicional de la comunicación y sincronización entre los procesos MPI.
+  - El código normal muestra un tiempo "user" de 0.002 segundos y un tiempo "sys" de 0.000 segundos. Estos tiempos son muy bajos, lo que indica que el cálculo se realizó rápidamente y con una utilización mínima de la CPU.
 
-- El código con OpenMP muestra un tiempo "user" más alto en comparación con los otros dos códigos. Esto es esperado ya que OpenMP utiliza múltiples hilos para paralelizar el cálculo, lo que implica una mayor carga en la CPU para administrar los hilos.
+  - El código con MPI muestra un tiempo "user" de 0.015 segundos y un tiempo "sys" de 0.017 segundos. Estos tiempos son ligeramente más altos que los del código normal. La comunicación y sincronización entre los procesos MPI pueden haber contribuido a estos tiempos adicionales.
 
-En resumen, en términos de tiempo de ejecución total (real), los tres códigos tienen un rendimiento similar. Sin embargo, en términos de tiempo de CPU utilizado (user y sys), el código normal tiene el menor tiempo, seguido por el código con MPI y luego el código con OpenMP.
+  - El código con OpenMP muestra un tiempo "user" de 0.124 segundos y un tiempo "sys" de 0.004 segundos. Estos tiempos son más altos que los de los otros dos códigos. La paralelización con OpenMP implica la creación y administración de múltiples hilos, lo que puede requerir más tiempo de CPU.
+
+En términos de tiempo "user", el código normal tiene el tiempo más bajo, seguido por el código con MPI y luego el código con OpenMP. Sin embargo, en términos de tiempo "sys", el código con MPI tiene el tiempo más alto, seguido por el código con OpenMP y luego el código normal.
+
+En general, los tiempos de ejecución son muy similares entre los tres códigos, con diferencias mínimas. La elección entre MPI y OpenMP dependerá de otros factores, como la naturaleza del problema y las características del entorno de ejecución.
