@@ -10,7 +10,7 @@ double f(double x){
 /*Program begins*/
 int main(int argc, char** argv){
   int rank, size, i, n;
-  double a, b, h, x, sum=0, integral, total;
+  double a, b, h, x, local_sum=0, total_sum;
 
   MPI_Init(&argc, &argv);
   MPI_Comm_rank(MPI_COMM_WORLD, &rank);
@@ -32,14 +32,14 @@ int main(int argc, char** argv){
   h = fabs(b-a)/n;
   for(i = rank + 1; i < n; i+=size){
     x = a + i*h;
-    sum = sum + f(x);
+    local_sum = local_sum + f(x);
   }
 
-  integral = (h/2)*(f(a)+f(b)+2*sum);
-  MPI_Reduce(&integral, &total, 1, MPI_DOUBLE, MPI_SUM, 0, MPI_COMM_WORLD);
+  MPI_Reduce(&local_sum, &total_sum, 1, MPI_DOUBLE, MPI_SUM, 0, MPI_COMM_WORLD);
 
   if(rank == 0){
-    printf("\nThe integral is: %lf\n", total);
+    double integral = (h/2)*(f(a)+f(b)+2*total_sum);
+    printf("\nThe integral is: %lf\n", integral);
   }
 
   MPI_Finalize();
