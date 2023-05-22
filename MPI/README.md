@@ -6,6 +6,45 @@ Una vez que tenemos el nuevo código `mpi_trapezAreaSimple.c`, para compilarlo u
 Para ejecutarlo, utilizamos el siguiente código: `mpirun -np 12 ./mpi_trapezAreaSimple`</br>
 Para medir el tiempo de ejecución se utiliza `time mpirun -np 12 ./mpi_trapezAreaSimple`</br>
 Con `time` obtenemos el tiempo de los tres códigos.
+
+# Ejecución y Medición de Tiempo del Código MPI
+
+En este repositorio se encuentran los archivos necesarios para compilar y ejecutar el código MPI (`mpi_trapezAreaSimple.c`). Además, se incluyen otros archivos relevantes como el archivo `trapezAreaSimple-mpi.sbatch`, el archivo de salida (`output_trapezAreaSimple.txt`), el código original (`trapezAreaSimple.c`) y el archivo ejecutable.
+
+## Compilación y Ejecución
+
+Sigue los siguientes pasos para compilar y ejecutar el código MPI:
+
+1. Se solicita los recursos necesarios y nos dirigimos a la carpeta asignada para trabajar.
+
+2. Se carga el módulo requerido utilizando el siguiente comando: `module load devtools/mpi/mpich/3.3.1`
+
+Esto cargará el módulo necesario para compilar el programa MPI.
+
+3. Compilar el código `mpi_trapezAreaSimple.c` utilizando el siguiente comando: `mpicc mpi_trapezAreaSimple.c -o mpi_trapezAreaSimple`
+
+Esto generará el archivo ejecutable `mpi_trapezAreaSimple`.
+
+4. Ejecutar el programa MPI utilizando el siguiente comando: `mpirun -np 12 ./mpi_trapezAreaSimple`
+
+Esto ejecutará el programa MPI con 12 procesos.
+
+## Medición de Tiempo de Ejecución
+
+Para medir el tiempo de ejecución del código MPI, utiliza el siguiente comando: `time mpirun -np 12 ./mpi_trapezAreaSimple`
+
+Esto te proporcionará el tiempo de ejecución del programa MPI.
+
+## Contenido del Repositorio
+
+El repositorio contiene los siguientes archivos:
+
+- `mpi_trapezAreaSimple.c`: El código fuente del programa MPI.
+- `trapezAreaSimple-mpi.sbatch`: El archivo sbatch utilizado para solicitar recursos y ejecutar el programa MPI.
+- `output_trapezAreaSimple.txt`: El archivo de salida que contiene los resultados de la ejecución del programa MPI.
+- `trapezAreaSimple.C`: El código fuente del programa original sin modificaciones.
+- `trapezAreaSimple-mpi.exe`: El archivo ejecutable del programa original.
+
 # Tiempo de ejecución de los tres códigos
 ## `trapezAreaSimple.c`
 ![Captura de pantalla 2023-05-22 083937](https://github.com/SC3UIS/IntroPP2183076/assets/82180254/d2f147d9-cd31-4066-8b2e-9eeef69272be)</br>
