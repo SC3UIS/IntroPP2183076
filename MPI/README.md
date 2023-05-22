@@ -1,7 +1,7 @@
 
 # Ejecución y Medición de Tiempo del Código MPI
 
-En este repositorio se encuentran los archivos necesarios para compilar y ejecutar el código MPI (`mpi_trapezAreaSimple.c`). Además, se incluyen otros archivos relevantes como el archivo `trapezAreaSimple-mpi.sbatch`, el archivo de salida (`output_trapezAreaSimple.txt`), el código original (`trapezAreaSimple.c`) y el archivo ejecutable.
+En este repositorio se encuentran los archivos necesarios para compilar y ejecutar el código MPI (`mpi_trapezAreaSimple.c`). Además, se incluyen otros archivos relevantes como el archivo `trapezAreaSimple-mpi.sbatch`, el archivo de salida (`output_trapezAreaSimple.txt`), el código original (`trapezAreaSimple.C`) y el archivo ejecutable.
 
 ## Compilación y Ejecución
 
