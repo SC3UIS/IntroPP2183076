@@ -16,25 +16,23 @@ Con `time` obtenemos el tiempo de los tres códigos.
 
 # Comparativa de Eficiencia de Implementaciones
 
-Se realizaron pruebas de tiempo de ejecución para las tres implementaciones diferentes: MPI, OpenMP y Normal. A continuación se presenta un resumen y una comparación de los resultados obtenidos.
-
 ## Resultados
 
 ### MPI
 
-- Tiempo total de ejecución: 0m2.989s
-- Tiempo de usuario: 0m0.013s
-- Tiempo del sistema: 0m0.014s
+- Tiempo total de ejecución: 0m2.514s
+- Tiempo de usuario: 0m25.108s
+- Tiempo del sistema: 0m2.043s
 
 ### OMP
 
-- Tiempo total de ejecución: 0m3.478s
-- Tiempo de usuario: 0m0.003s
-- Tiempo del sistema: 0m0.007s
+- Tiempo total de ejecución: 0m3.507s
+- Tiempo de usuario: 0m0.010s
+- Tiempo del sistema: 0m0.001s
 
 ### Normal
 
-- Tiempo total de ejecución: 0m3.745s
+- Tiempo total de ejecución: 0m3.863s
 - Tiempo de usuario: 0m0.000s
 - Tiempo del sistema: 0m0.002s
 
@@ -42,8 +40,8 @@ Se realizaron pruebas de tiempo de ejecución para las tres implementaciones dif
 
 Basándonos en los resultados de tiempo de ejecución, se puede concluir lo siguiente:
 
-- La implementación más rápida es MPI, con un tiempo total de ejecución de 2.989 segundos.
-- La implementación de OMP tiene un tiempo total de ejecución de 3.478 segundos.
-- La implementación normal tiene un tiempo total de ejecución de 3.745 segundos.
+- La implementación más rápida es MPI, con un tiempo total de ejecución de 2.514 segundos.
+- La implementación de OMP tiene un tiempo total de ejecución de 3.507 segundos.
+- La implementación normal tiene un tiempo total de ejecución de 3.863 segundos.
 
-En términos de eficiencia, la implementación más eficiente es MPI, seguida de OMP y luego la implementación normal.
+En términos de eficiencia relativa, la implementación más eficiente es MPI, seguida de OMP y luego la implementación normal.
