@@ -10,7 +10,7 @@ En este repositorio se encuentran los 6 archivos
 * El archivo ejecutable ```omp_trapezAreaSimple.exe```
 <br />Se han documentado todas las variaciones que se realizaron en el código fuente en los comentarios del código.
 En el ```README``` del repositorio ```OpenMP``` se encuentran en mayor detalle los pasos segidos.
-## Desarrollo de Evaluación 2 C/C++ Procesamiento Memoria Distribuida (Individual)
+## Desarrollo de Evaluación 2 C/C++ Procesamiento Memoria Distribuida
 
 En esta evaluación se busca evaluar nuestra capacidad para implementar y ejecutar códigos en C/C++ utilizando el modelo de programación de memoria distribuida con MPI (Message Passing Interface). En este repositorio se encuentran los archivos relacionados a la evaluación:
 
