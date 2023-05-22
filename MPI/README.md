@@ -8,13 +8,11 @@ Para medir el tiempo de ejecución se utiliza `time mpirun -np 12 ./mpi_trapezAr
 Con `time` obtenemos el tiempo de los tres códigos.
 # Tiempo de ejecución de los tres códigos
 ## `trapezAreaSimple.c`
-![Captura de pantalla 2023-05-16 224746](https://github.com/SC3UIS/IntroPP2183076/assets/82180254/2c6642fb-5509-4202-a984-e63fe364f9d2)</br>
+![Captura de pantalla 2023-05-22 083937](https://github.com/SC3UIS/IntroPP2183076/assets/82180254/d2f147d9-cd31-4066-8b2e-9eeef69272be)</br>
 ## `omp_trapezAreaSimple.c`
-![Captura de pantalla 2023-05-16 224918](https://github.com/SC3UIS/IntroPP2183076/assets/82180254/c0078b0b-1c69-46ed-93a4-00c96165717c)</br>
+![Captura de pantalla 2023-05-22 084026](https://github.com/SC3UIS/IntroPP2183076/assets/82180254/588908f3-c8c9-4899-b227-affed63eb436)</br>
 ## `mpi_trapezAreaSimple.c`
-![Captura de pantalla 2023-05-16 232318](https://github.com/SC3UIS/IntroPP2183076/assets/82180254/8fbeda96-d495-47b1-b6bb-28aeed9de43f)
-
-</br>
+![Captura de pantalla 2023-05-22 084233](https://github.com/SC3UIS/IntroPP2183076/assets/82180254/057c4f9d-4486-409a-bc54-9cf5076a9aaa)</br>
 
 # Comparativa de Eficiencia de Implementaciones
 
