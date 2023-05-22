@@ -1,11 +1,3 @@
-En el trabajo de OpenMP ya compilamos y ejecutamos el código original `trapezAreaSimple.c` y el modificado con OpenMP.</br>
-En este caso, únicamente tenemos el código MPI, el cual se encuentra en este repositorio con el nombre `mpi_trapezAreaSimple.c`.</br>
-Para compilarlo y ejecutarlo, seguimos los siguientes pasos:</br>
-Una vez que hemos solicitado los recursos y nos encontramos en la carpeta asignada para trabajar, cargamos el módulo. Para eso, utilizamos el siguiente código: `module load devtools/mpi/mpich/3.3.1`. De esta manera, podemos compilar el programa.</br>
-Una vez que tenemos el nuevo código `mpi_trapezAreaSimple.c`, para compilarlo utilizamos el siguiente código: `mpicc mpi_trapezAreaSimple.c -o mpi_trapezAreaSimple`.</br>
-Para ejecutarlo, utilizamos el siguiente código: `mpirun -np 12 ./mpi_trapezAreaSimple`</br>
-Para medir el tiempo de ejecución se utiliza `time mpirun -np 12 ./mpi_trapezAreaSimple`</br>
-Con `time` obtenemos el tiempo de los tres códigos.
 
 # Ejecución y Medición de Tiempo del Código MPI
 
@@ -13,21 +5,15 @@ En este repositorio se encuentran los archivos necesarios para compilar y ejecut
 
 ## Compilación y Ejecución
 
-Sigue los siguientes pasos para compilar y ejecutar el código MPI:
+Los siguientes pasos sirven para compilar y ejecutar el código MPI:
 
-1. Se solicita los recursos necesarios y nos dirigimos a la carpeta asignada para trabajar.
+1. Se solicitan los recursos necesarios y nos dirigimos a la carpeta asignada para trabajar.
 
-2. Se carga el módulo requerido utilizando el siguiente comando: `module load devtools/mpi/mpich/3.3.1`
+2. Se carga el módulo requerido utilizando el siguiente comando: `module load devtools/mpi/mpich/3.3.1`. Esto cargará el módulo necesario para compilar el programa MPI.
 
-Esto cargará el módulo necesario para compilar el programa MPI.
+3. Compilar el código `mpi_trapezAreaSimple.c` utilizando el siguiente comando: `mpicc mpi_trapezAreaSimple.c -o mpi_trapezAreaSimple`. Esto generará el archivo ejecutable `mpi_trapezAreaSimple`.
 
-3. Compilar el código `mpi_trapezAreaSimple.c` utilizando el siguiente comando: `mpicc mpi_trapezAreaSimple.c -o mpi_trapezAreaSimple`
-
-Esto generará el archivo ejecutable `mpi_trapezAreaSimple`.
-
-4. Ejecutar el programa MPI utilizando el siguiente comando: `mpirun -np 12 ./mpi_trapezAreaSimple`
-
-Esto ejecutará el programa MPI con 12 procesos.
+4. Ejecutar el programa MPI utilizando el siguiente comando: `mpirun -np 12 ./mpi_trapezAreaSimple`. Esto ejecutará el programa MPI con 12 procesos.
 
 ## Medición de Tiempo de Ejecución
 
