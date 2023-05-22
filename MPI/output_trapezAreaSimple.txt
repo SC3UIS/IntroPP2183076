@@ -1,0 +1,41 @@
+MPI
+
+Enter the no. of sub-intervals: 1000
+
+Enter the initial limit: 3
+
+Enter the final limit: 8
+
+The integral is: 161.666688
+
+real    0m2.989s
+user    0m0.013s
+sys     0m0.014s
+
+OpenMP
+
+Enter the no. of sub-intervals: 1000
+
+Enter the initial limit: 3
+
+Enter the final limit: 8
+
+The integral is: 161.666688
+
+real    0m3.478s
+user    0m0.003s
+sys     0m0.007s
+
+Normal
+
+Enter the no. of sub-intervals: 1000
+
+Enter the initial limit: 3
+
+Enter the final limit: 8
+
+The integral is: 161.666688
+
+real    0m3.745s
+user    0m0.000s
+sys     0m0.002s
