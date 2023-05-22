@@ -29,7 +29,7 @@ El repositorio contiene los siguientes archivos:
 - `trapezAreaSimple-mpi.sbatch`: El archivo sbatch utilizado para solicitar recursos y ejecutar el programa MPI.
 - `output_trapezAreaSimple.txt`: El archivo de salida que contiene los resultados de la ejecución del programa MPI.
 - `trapezAreaSimple.C`: El código fuente del programa original sin modificaciones.
-- `trapezAreaSimple-mpi.exe`: El archivo ejecutable del programa original.
+- `mpi_trapezAreaSimple`: El archivo ejecutable del programa original.
 
 # Tiempo de ejecución de los tres códigos
 ## `trapezAreaSimple.c`
