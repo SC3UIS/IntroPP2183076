@@ -16,32 +16,36 @@ Con `time` obtenemos el tiempo de los tres códigos.
 
 </br>
 
-- Código normal:
-  - Real: 0m5.082s
-  - User: 0m0.002s
-  - Sys: 0m0.000s
+# Comparativa de Eficiencia de Implementaciones
 
-- Código con MPI:
-  - Real: 0m5.097s
-  - User: 0m0.015s
-  - Sys: 0m0.017s
+Se realizaron pruebas de tiempo de ejecución para las tres implementaciones diferentes: MPI, OpenMP y Normal. A continuación se presenta un resumen y una comparación de los resultados obtenidos.
 
-- Código con OpenMP:
-  - Real: 0m5.105s
-  - User: 0m0.124s
-  - Sys: 0m0.004s
+## Resultados
 
+### MPI
 
-- En términos de tiempo "real", que indica la duración total de la ejecución del programa, los tres códigos tienen tiempos muy similares, alrededor de 5.1 segundos.
+- Tiempo total de ejecución: 0m2.989s
+- Tiempo de usuario: 0m0.013s
+- Tiempo del sistema: 0m0.014s
 
-- El tiempo "user" representa el tiempo de CPU utilizado por el usuario, mientras que el tiempo "sys" representa el tiempo de CPU utilizado por el sistema operativo. En estos tiempos, es importante observar la diferencia entre los códigos.
+### OMP
 
-  - El código normal muestra un tiempo "user" de 0.002 segundos y un tiempo "sys" de 0.000 segundos. Estos tiempos son muy bajos, lo que indica que el cálculo se realizó rápidamente y con una utilización mínima de la CPU.
+- Tiempo total de ejecución: 0m3.478s
+- Tiempo de usuario: 0m0.003s
+- Tiempo del sistema: 0m0.007s
 
-  - El código con MPI muestra un tiempo "user" de 0.015 segundos y un tiempo "sys" de 0.017 segundos. Estos tiempos son ligeramente más altos que los del código normal. La comunicación y sincronización entre los procesos MPI pueden haber contribuido a estos tiempos adicionales.
+### Normal
 
-  - El código con OpenMP muestra un tiempo "user" de 0.124 segundos y un tiempo "sys" de 0.004 segundos. Estos tiempos son más altos que los de los otros dos códigos. La paralelización con OpenMP implica la creación y administración de múltiples hilos, lo que puede requerir más tiempo de CPU.
+- Tiempo total de ejecución: 0m3.745s
+- Tiempo de usuario: 0m0.000s
+- Tiempo del sistema: 0m0.002s
 
-En términos de tiempo "user", el código normal tiene el tiempo más bajo, seguido por el código con MPI y luego el código con OpenMP. Sin embargo, en términos de tiempo "sys", el código con MPI tiene el tiempo más alto, seguido por el código con OpenMP y luego el código normal.
+## Comparativa
 
-En general, los tiempos de ejecución son muy similares entre los tres códigos, con diferencias mínimas. La elección entre MPI y OpenMP dependerá de otros factores, como la naturaleza del problema y las características del entorno de ejecución.
+Basándonos en los resultados de tiempo de ejecución, se puede concluir lo siguiente:
+
+- La implementación más rápida es MPI, con un tiempo total de ejecución de 2.989 segundos.
+- La implementación de OMP tiene un tiempo total de ejecución de 3.478 segundos.
+- La implementación normal tiene un tiempo total de ejecución de 3.745 segundos.
+
+En términos de eficiencia, la implementación más eficiente es MPI, seguida de OMP y luego la implementación normal.
