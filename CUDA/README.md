@@ -1,3 +1,27 @@
+# Integrantes del Equipo
+
+- Julian Esteban Garcia Duarte - 2180025
+- Jeicob Gilmar Restrepo Gómez - 2183076
+- Sebastián David Mendoza Alvarado -2191969
+
+
+## Ejecución
+
+A continuación se presentan los pantallazos de las ejecuciones de cada una de las implementaciones:
+
+### CUDA
+
+![CUDA](https://github.com/SC3UIS/IntroPP2183076/assets/82180254/e93817cd-7380-432d-8bfd-0c7c4dfe1e4e)
+
+### OpenMP
+
+![OMP](https://github.com/SC3UIS/IntroPP2183076/assets/82180254/fa449955-41aa-4240-862e-a0f617f99820)
+
+### MPI
+
+![MPI](https://github.com/SC3UIS/IntroPP2183076/assets/82180254/8e4f393f-b259-4895-a63e-feeca4639150)
+
+
 # Análisis y Conclusiones
 
 Los resultados obtenidos de las implementaciones CUDA, OpenMP y MPI del algoritmo de integración numérica son los siguientes:
