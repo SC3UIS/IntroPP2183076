@@ -4,6 +4,26 @@
 - Jeicob Gilmar Restrepo Gómez - 2183076
 - Sebastián David Mendoza Alvarado -2191969
 
+# trapezAreaSimple
+
+## Descripción del Proceso de Ejecución con CUDA para `trapezAreaSimple`
+
+A continuación se describe el proceso paso a paso para ejecutar el código paralelizado con CUDA utilizando el archivo "CUDA_trapezAreaSimple.cu":
+
+1. Cargar el módulo CUDA:
+   - El proceso comienza cargando el módulo "devtools/cuda/8.0" para asegurar que las herramientas de desarrollo y la versión adecuada de CUDA estén disponibles en el entorno de ejecución.
+
+2. Solicitar recursos de la GPU:
+   - Se utiliza el comando `srun` para solicitar recursos de la GPU y obtener acceso a una máquina que tenga una GPU disponible. La opción `--gres=gpu` se utiliza para especificar que solo se requiere una GPU para la ejecución.
+     
+3. Iniciar una sesión interactiva:
+   - El parámetro `--pty` se utiliza con el comando `srun` para iniciar una sesión interactiva en la máquina asignada. Esto permite ejecutar comandos en un entorno interactivo dentro de la GPU asignada.
+
+4. Compilar el código CUDA:
+   - Se utiliza el compilador `nvcc` (NVIDIA CUDA Compiler) para compilar el archivo "CUDA_trapezAreaSimple.cu". El comando de compilación utilizado es `nvcc CUDA_trapezAreaSimple.cu -o CUDA_trapezAreaSimple`, donde se especifica el nombre de salida del ejecutable como "CUDA_trapezAreaSimple".
+
+5. Ejecutar el programa:
+   - Finalmente, se ejecuta el programa utilizando el comando `./CUDA_trapezAreaSimple`. Esto inicia la ejecución del código paralelizado con CUDA y muestra los resultados en la salida estándar.
 
 ## Ejecución
 
@@ -75,3 +95,4 @@ A partir de los resultados, se pueden observar las siguientes conclusiones:
    - La implementación MPI tardó 0.000318 segundos, mostrando su distribución eficiente de tareas entre varios procesos.
 
 En general, la implementación CUDA superó a las implementaciones OpenMP y MPI en términos de rendimiento computacional y logró un speedup significativo. Sin embargo, la implementación MPI demostró el mayor speedup y escalabilidad, lo que la convierte en una excelente opción para cálculos paralelos a gran escala. La implementación OpenMP mostró un speedup y escalabilidad moderados, lo que indica su eficacia para paralelizar cálculos en un sistema de memoria compartida.
+# summaSimple
