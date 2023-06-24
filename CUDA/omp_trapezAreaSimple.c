@@ -1,65 +1,56 @@
-/*
-
-  Purpose:
-
-    TRANSFORM is an example of a transformation of an EDP using some parameters for Intro PP Students.
-
-  Example:
-
-    23 Apr 2023 7:27:12 PM
-
-  Licensing:
-
-    This code is distributed under the GNU LGPL license.
-
-  Modified:
-
-    23 April 2023
-
-  Author:
-  George 
-  OpenMP Modification:
-  23 april 2023 by Jeicob Restrepo, Universidad Industrial de Santander jeicob2183076@correo.uis.edu.co                   
-  This OpenMP Modification makes a parallelization of the original Code... 
-*/
 #include<stdio.h>
 #include<math.h>
 #include<omp.h>
+#include<sys/time.h>
 
 /* Define the function to be integrated here: */
-double f(double x){
-  return x*x;
+double f(double x) {
+  return x * x;
 }
 
-/*Program begins*/
-int main(){
-  int n,i;
-  double a,b,h,x,sum=0,integral;
-  /*Ask the user for necessary input */
-  printf("\nEnter the no. of sub-intervals: ");
-  scanf("%d",&n);
+int main() {
+  int n, i;
+  double a, b, h, x, sum = 0, integral;
+  struct timeval start, end;
+
+  /* Ask the user for necessary input */
+  printf("\nEnter the number of sub-intervals: ");
+  scanf("%d", &n);
   printf("\nEnter the initial limit: ");
-  scanf("%lf",&a);
+  scanf("%lf", &a);
   printf("\nEnter the final limit: ");
-  scanf("%lf",&b);
-  /*Begin Trapezoidal Method: */
-  h=fabs(b-a)/n;
-  
-  /*
-  Se utiliza la directiva #pragma omp parallel for para paralelizar el ciclo que recorre los subintervalos.
-  La cláusula shared(sum) indica que la variable sum será compartida entre los hilos que se creen.
-  La cláusula private(i,x) indica que las variables i y x serán privadas para cada hilo.
-  */
-  #pragma omp parallel for shared(sum) private(i,x)
-  //El ciclo for va desde 1 hasta n-1, ya que los extremos del intervalo ya se han incluido en el cálculo del área.
-  for(i=1;i<n;i++){
-    //La variable x se actualiza en cada iteración para que represente el extremo derecho del subintervalo actual.
-    x=a+i*h;
-    #pragma omp atomic //La directiva #pragma omp atomic se utiliza para asegurar que la suma de f(x) en cada subintervalo sea atómica, es decir, que sea ejecutada como una operación única.
-    sum=sum+f(x);
+  scanf("%lf", &b);
+
+  /* Begin Trapezoidal Method */
+  h = fabs(b - a) / n;
+
+  gettimeofday(&start, NULL);  // Start timing
+
+#pragma omp parallel for private(i, x) reduction(+:sum)
+  for (i = 1; i < n; i++) {
+    x = a + i * h;
+    sum += f(x);
   }
 
-  integral=(h/2)*(f(a)+f(b)+2*sum);
-  /*Print the answer */
-  printf("\nThe integral is: %lf\n",integral);
+  integral = (h / 2) * (f(a) + f(b) + 2 * sum);
+
+  gettimeofday(&end, NULL);  // Stop timing
+
+  /* Calculate elapsed time in seconds */
+  double elapsedTime = (end.tv_sec - start.tv_sec) + (end.tv_usec - start.tv_usec) / 1000000.0;
+
+  /* Calculate metrics */
+  double speedup = elapsedTime / 0.000318;
+  double scalability = speedup / omp_get_max_threads();
+  double flops = (double)n * 4;  // 4 floating-point operations per iteration
+  double performance = flops / elapsedTime;
+
+  /* Print the answer and metrics */
+  printf("\nThe integral is: %lf\n", integral);
+  printf("Elapsed Time: %.6f seconds\n", elapsedTime);
+  printf("Speedup: %.2f\n", speedup);
+  printf("Scalability: %.2f\n", scalability);
+  printf("Performance: %.2f FLOPS/sec\n", performance);
+
+  return 0;
 }
